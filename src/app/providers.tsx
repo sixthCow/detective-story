@@ -19,7 +19,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
 
 const demoAppInfo = {
-  appName: 'detective-story',
+  appName: 'detective',
 };
 
 const connectors = connectorsForWallets([
