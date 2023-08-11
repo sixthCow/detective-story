@@ -70,7 +70,7 @@ export default function Content() {
     // @ts-ignore
     abi: detective.abi,
     // @ts-ignore
-    chainId: 4002 ,
+    chainId: 919 ,
     // @ts-ignore
     functionName: 'safeMint',
   });
