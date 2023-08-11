@@ -7,15 +7,46 @@ import {
 } from '@rainbow-me/rainbowkit';
 
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import {baseGoerli } from 'wagmi/chains';
+import {zoraTestnet } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import {injectedWallet} from '@rainbow-me/rainbowkit/wallets';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 
+ const modeTestnet= {
+   id: 919,
+   name: "Mode Goerli Testnet",
+   network: "Mode-testnet",
+   nativeCurrency: {
+       decimals: 18,
+       name: "Mode Goerli",
+       symbol: "ETH",
+  },
+   rpcUrls: {
+       default: {
+           http:  ["https://sepolia.mode.network"],
+           webSocket:  ["wss://sepolia.mode.network"],
+      },
+       public: {
+           http:  ["https://sepolia.mode.network"],
+           webSocket:  ["wss://sepolia.mode.network"],
+      },
+  },
+   blockExplorers: {
+       etherscan: {
+           name: "Mode",
+           url: "https://sepolia.explorer.mode.network/",
+      },
+       default: {
+           name: "Mode",
+           url: "https://sepolia.explorer.mode.network/",
+      },
+  },
+  
+}
 
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [baseGoerli],
+  [modeTestnet, zoraTestnet],
   [publicProvider()]
 );
 
